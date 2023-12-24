@@ -57,7 +57,7 @@ def llm_pipeline():
         do_sample = True,
         temperature = 0.3,
         top_p= 0.95,
-        device=device
+        #device=device
     )
     local_llm = HuggingFacePipeline(pipeline=pipe)
     return local_llm
@@ -112,7 +112,8 @@ def display_conversation(history):
 def main():
     st.markdown("<h1 style='text-align: center; color: blue;'>Chat with your PDF</h1>", unsafe_allow_html=True)
 
-    st.markdown("<h2 style='text-align: center; color:red;'>Upload your PDF</h2>", unsafe_allow_html=True)
+
+    st.markdown("<h2 style='text-align: center; color:red;'>Upload your PDF </h2>", unsafe_allow_html=True)
 
     uploaded_file = st.file_uploader("", type=["pdf"])
 
@@ -166,5 +167,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
